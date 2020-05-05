@@ -15,8 +15,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+# from django.conf.urls import include
+from django.contrib.auth import views
+# from .views import home
+
 
 urlpatterns = [
+    # path('admin/', admin.site.urls),
+
+    # User System
+    path('account/', include('user_system.urls')),
+    # path('auth/', include('social_django.urls', namespace='social')),
+
+    # Expense System
     path('expense/', include('expense_system.urls')),
-    path('admin/', admin.site.urls),
 ]

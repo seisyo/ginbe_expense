@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>index</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<p>Login Page</p>
+    {% block content %}
+    <ul>
+        <li><a href="{% url 'social:begin' 'google-oauth2' %}">Login with Google</a></li>
+    </ul>
+    <a href="{% url 'index' %}">Back</a>
+    {% endblock content %}
+</body>
+</html>
+
