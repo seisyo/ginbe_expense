@@ -4,14 +4,35 @@
     <meta charset="utf-8" />
     <title>index</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% load static %}
+    <link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}">
 </head>
-<body>
-<p>Login Page</p>
-    {% block content %}
-    <ul>
-        <li><a href="{% url 'social:begin' 'google-oauth2' %}">Login with Google</a></li>
-    </ul>
-    <a href="{% url 'index' %}">Back</a>
+<body class="text-center">
+    <h1>Login Page</h1>
+    <br>
+
+    {% block content %} 
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <a href="{% url 'social:begin' 'google-oauth2' %}">
+                    <button class="btn btn btn-outline-primary btn-lg" type="button">
+                        Login with Google
+                    </button>
+                </a>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-sm-12">
+                <a href="{% url 'account_home' %}">
+                    <button class="btn btn-primary btn-sm" type="button">
+                        Account Home
+                    </button>
+                </a>
+            </div>
+        </div>
+    </div>
     {% endblock content %}
 </body>
 </html>
